@@ -13,5 +13,4 @@ LABEL org.label-schema.name="terraform-gandi" \
 ENV TERRAFORM_VERSION="v0.12.29"
 RUN mkdir -p /root/.terraform.d/plugins/linux_amd64 || true
 COPY --from=builder /opt/terraform.d/plugins/linux_amd64/terraform-provider-gandi_v1.0.0 /root/.terraform.d/plugins/linux_amd64/
-RUN ls -al /root/.terraform.d/plugins/linux_amd64/
 ENTRYPOINT ["/bin/terraform"]
